@@ -6,6 +6,7 @@ use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Throwable;
+use Unwahas\ErrorRedirect\Console\Commands\GenerateUniqueCodeCommand;
 use Unwahas\ErrorRedirect\Http\Middleware\VerifyApiKey;
 use Unwahas\ErrorRedirect\Support\ErrorLog;
 
@@ -18,6 +19,12 @@ class ErrorRedirectServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                GenerateUniqueCodeCommand::class,
+            ]);
+        }
+
         $this->publishes([
             __DIR__.'/../config/error-redirect.php' => config_path('error-redirect.php'),
         ], 'error-redirect-config');

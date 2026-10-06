@@ -47,6 +47,14 @@ ErrorLog::record($exception, ['source' => 'webhook'], deduplicate: false);
 
 Set `ERROR_REDIRECT_REPORT_EXCEPTIONS=true` to automatically record exceptions passed through Laravel's exception reporter. This is disabled by default to avoid changing existing reporting behavior unexpectedly.
 
+Generate a secure code for `ERROR_REDIRECT_API_KEY` with the package's Artisan command:
+
+```sh
+php artisan error-redirect:generate-code
+```
+
+The command prints a 64-character code by default. Set a custom length between 16 and 128 characters with `--length`, then copy the output into your `.env` file as `ERROR_REDIRECT_API_KEY`.
+
 The Eloquent model is `Unwahas\ErrorRedirect\Models\ErrorLog`.
 
 ## API endpoints
