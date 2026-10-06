@@ -9,7 +9,7 @@ A Laravel package for recording application exceptions and custom error messages
 
 ## Installation
 
-Install the package with Composer (`composer require unwahas/error-redirect`). Laravel package discovery registers `Unwahas\ErrorRedirect\ErrorRedirectServiceProvider` automatically. Publish its configuration if you want to customize it:
+Install the package with Composer (`composer require unwahas/error-managements`). Laravel package discovery registers `Unwahas\ErrorRedirect\ErrorRedirectServiceProvider` automatically. Publish its configuration if you want to customize it:
 
 ```sh
 php artisan vendor:publish --tag=error-redirect-config
