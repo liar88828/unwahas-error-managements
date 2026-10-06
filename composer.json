@@ -9,12 +9,6 @@
         "error-managements",
         "error logging"
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/liar88828/unwahas-error-managements.git"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Unwahas\\ErrorRedirect\\": "src/"
@@ -50,6 +44,5 @@
             "name": "Brian",
             "email": "liar88828@gmail.com"
         }
-    ],
-    "minimum-stability": "stable"
+    ]
 }
